@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiFi Analyzer</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090f1e;color:#f1f5f9;font-family:Arial,sans-serif}
+header{padding:24px 18px;background:#111b30;border-bottom:1px solid #25334b}
+header h1{margin:0;font-size:25px}
+header p{color:#91a4bd;font-size:13px}
+main{padding:18px;max-width:650px;margin:auto}
+.card{background:#142039;border:1px solid #263653;border-radius:16px;padding:18px;margin-bottom:16px}
+.label{color:#9eb0ca;font-size:13px}
+.big{font-size:34px;font-weight:bold;margin:10px 0}
+button{width:100%;border:0;border-radius:12px;padding:15px;background:#4388ff;color:white;font-size:16px;font-weight:bold}
+button:active{opacity:.8}
+.network{padding:14px 0;border-bottom:1px solid #293750}
+.network:last-child{border:0}
+.network strong{display:block;margin-bottom:7px}
+.muted{color:#91a4bd;font-size:12px}
+.bar{height:7px;background:#293750;border-radius:10px;margin-top:9px;overflow:hidden}
+.fill{height:100%;background:#21d49b;border-radius:10px}
+.tag{color:#5fe0b1;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+<h1>📶 WiFi Analyzer</h1>
+<p>Wireless network monitoring dashboard</p>
+</header>
+<main>
+<div class="card">
+<div class="label">NETWORK ANALYSIS</div>
+<div class="big" id="status">Ready</div>
+<p class="muted" id="message">Connect your Android WiFi scanner to begin.</p>
+<button onclick="scan()">Start Analysis</button>
+</div>
+
+<div class="card">
+<div class="label">CONNECTED NETWORK</div>
+<h2 id="ssid">Not available</h2>
+<p class="muted" id="details">Waiting for Android WiFi data</p>
+</div>
+
+<div class="card">
+<h3>Nearby Networks</h3>
+<div id="networks">
+<p class="muted">No scan results yet.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Channel Analysis</h3>
+<div class="big" id="channel">--</div>
+<p class="muted" id="recommendation">Channel recommendation will appear after scanning.</p>
+</div>
+</main>
+<script>
+function scan(){
+ document.getElementById("status").textContent="Waiting...";
+ document.getElementById("message").textContent=
+ "The native Android WiFi scanner will provide real scan results in the APK.";
+ document.getElementById("networks").innerHTML=
+ '<p class="muted">Android WiFi scanning integration is the next development step.</p>';
+}
+</script>
+</body>
+</html>
