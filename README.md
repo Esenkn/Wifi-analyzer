@@ -1,23 +1,17 @@
 # WiFi Analyzer
 
-A lightweight WiFi network dashboard for monitoring nearby access points and evaluating channel congestion.
+A lightweight WiFi network dashboard designed for both a browser demo and a native Android app.
 
-## What it is
+## Project status
 
-This project is a front-end prototype that simulates a WiFi analyzer dashboard. It shows:
+This repository now contains:
 
-- the connected network
-- current signal strength
-- nearby access points
-- a recommended channel for reducing interference
+- a static web prototype at `index.html`
+- an Android app project under `app/` using Jetpack Compose
 
-## Run it locally
+## Web version
 
-Because this is a static website, there is no build step required.
-
-Option 1: open `index.html` directly in your browser.
-
-Option 2: serve it locally:
+Open `index.html` directly in a browser or run:
 
 ```bash
 cd Wifi-analyzer
@@ -30,16 +24,46 @@ Then open:
 http://localhost:8000
 ```
 
-## Customize the scanner data
+## Android app version
 
-Edit the `mockNetworks` array inside `index.html` to change the simulated WiFi data.
+This project is structured as a standard Android app using Kotlin and Jetpack Compose.
+
+### Prerequisites
+
+- Android Studio
+- Android SDK 34
+- JDK 17
+
+### Open in Android Studio
+
+1. Open the repository in Android Studio.
+2. Let Gradle sync.
+3. Select the `app` module.
+4. Run the app on an emulator or connected Android device.
+
+### Build from the command line
+
+```bash
+./gradlew assembleDebug
+```
+
+If you are using a Windows machine:
+
+```powershell
+gradlew.bat assembleDebug
+```
+
+## Features
+
+- connected network details
+- signal strength and band information
+- nearby network scanning simulation
+- channel recommendation logic
 
 ## Future improvements
 
 - real Android WiFi API integration
-- RSSI history charts
+- RSSI trend charts
 - channel overlap analysis
-- dark/light theme toggle
-- export scan reports
-
-
+- export and save scan reports
+- more advanced network diagnostics
